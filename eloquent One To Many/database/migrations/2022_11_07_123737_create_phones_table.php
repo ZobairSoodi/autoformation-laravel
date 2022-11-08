@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('profile', function (Blueprint $table) {
             $table->bigIncrements('id_profile');
             $table->string('phone_number');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id_user')->on('user');
             $table->timestamps();
         });
     }

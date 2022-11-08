@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class profile extends Model
 {
     // use HasFactory;
-    protected $fillable =[];
+    function user(){
+        return $this->belongsTo(profile::class, 'id_user', 'id_profile');
+    }
 
 }
